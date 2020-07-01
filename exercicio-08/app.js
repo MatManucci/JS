@@ -62,6 +62,7 @@ show7x(10) */
   - Exiba o novo array no console, sem inserir um console.log() dentro da  
     função.
 */
+
 /* function growMilennials(millennialWords){
   let newWord =[];
   for (let index = 0; index < millennialWords.length; index++) {
@@ -73,8 +74,8 @@ show7x(10) */
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
 
-console.log(growMilennials(millennialWords))
- */
+console.log(growMilennials(millennialWords)) */
+
 /*
   05
 
@@ -86,8 +87,24 @@ console.log(growMilennials(millennialWords))
   "O array "randomNumbers" possui XX números, sendo XX positivos e XX negativos."
 */
 
-const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
+/* const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
 
+function isPositive(num = 0) {
+  return num >= 0
+}
+
+let countPositivos = 0
+let countNegativos = 0
+
+
+for ( let index = 0; index < randomNumbers.length; index++) {
+  if(isPositive(randomNumbers[index])){
+    countPositivos++
+  }else
+    countNegativos++
+}
+console.log(`O array "randomNumbers" possui ${randomNumbers.length}, sendo ${countPositivos} positivos e ${countNegativos} negativos`)
+ */
 /*
   06
 
@@ -98,13 +115,22 @@ const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
     função.
 */
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+const getOddNumbers = function (numbers=[]) {
+  const oddNumbers =[]
+  for (let index = 0; index < numbers.length; index++) {
+    if(numbers[index]%2 !== 0)
+      oddNumbers.push(numbers[index])
+  }
+  return oddNumbers
+}
+console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
 
-/*
-  07
+
+
+ /*  07
 
   - Forme uma frase com o array abaixo e exiba-a no console.
-*/
+ */
 
 const functions = [
   function () { return 'Plymouth' },
@@ -136,3 +162,10 @@ const functions = [
   function () { return 'Índias' },
   function () { return 'Ocidentais.' }
 ]
+let frase ='';
+for(let index =0;index < functions.length; index++){
+frase += `${functions[index]()} `
+  
+}
+
+console.log(frase)
