@@ -14,8 +14,11 @@
 */
 
 function convertToString (value) {
-  return String(value)
+  return 2
 }
+
+const arrowValue = value => String(value + '2')
+console.log(arrowValue('x'))
 
 /*
   02
@@ -24,22 +27,33 @@ function convertToString (value) {
     recebida por parâmetro possui.
 */
 
+const qtd = word => word.length
+
+//console.log(qtd('Matheus'))
+
 /*
   03
 
   - Crie uma função que retorne todos os caracteres de uma string em letras  
     minúsculas;  
   - Utilize a função para exibir a string abaixo no console.
-
-  "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
+  value = "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 
+ const smallLetters = value => value.toLowerCase()
+
+ console.log(smallLetters(value))
 /*
-  04
+  04 ok
 
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+let str = 'palavravita'
+
+const x = (t, palavra) => palavra.indexOf(t)
+
+console.log(x('l',str))
 
 /*
   05
@@ -48,12 +62,25 @@ function convertToString (value) {
     passado por argumento existe no array (também passado por argumento).
 */
 
+let arr = ['veganismo', 'ovolactovegetarianismo', 'carnismo', 'frugivorismo']
+
+const couldfindWord = (word, array) => array.includes(word)
+
+console.log(couldfindWord('ovolactovegetarianismo', arr))
+
+
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+ let arr1 = ['teste1', 'teste2', 'teste3']
+ let arr2 = ['teste4', 'teste5', 'teste6']
+
+ const juntarArray = (array1, array2) => array1.concat(array2)
+
+ console.log(juntarArray(arr1, arr2).join(';'))
 
 /*
   07
@@ -61,13 +88,19 @@ function convertToString (value) {
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
+  const removeLast = (array1) => array1.slice(0, array1.indexOf(array1.length))
 
+  console.log('ver no vídeo 7')
 /*
   08
 
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+let verifyIsNull = null
+const isNull = (value) => value === null
+
+console.log(isNull(verifyIsNull))
 
 /*
   09
@@ -80,6 +113,13 @@ function convertToString (value) {
     foi exibido.
 */
 
+const invocaCallback = (exibeNome) => {
+  exibeNome
+}
+
+function exibeNome(){
+  console.log('Matheus')
+}
 /*
   10
 
@@ -146,7 +186,7 @@ const review = [
 
 let paragraphs = ''
 
-section.innerHTML = paragraphs
+//section.innerHTML = paragraphs
 
 /*
   14
