@@ -88,9 +88,13 @@ console.log(couldfindWord('ovolactovegetarianismo', arr))
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
-  const removeLast = (array1) => array1.slice(0, array1.indexOf(array1.length))
-
-  console.log('ver no vídeo 7')
+  const removeLast = (array1) => {
+    array1.pop()
+    return array1
+  }
+  
+  console.log(removeLast(arr1))
+  
 /*
   08
 
@@ -98,7 +102,7 @@ console.log(couldfindWord('ovolactovegetarianismo', arr))
     invocação é null.
 */
 let verifyIsNull = null
-const isNull = (value) => value === null
+const isNull = value => value === null
 
 console.log(isNull(verifyIsNull))
 
@@ -114,12 +118,14 @@ console.log(isNull(verifyIsNull))
 */
 
 const invocaCallback = (exibeNome) => {
-  exibeNome
+  exibeNome()
 }
 
-function exibeNome(){
-  console.log('Matheus')
+const  exibeNome = () =>{
+  return console.log('Matheus')
 }
+
+invocaCallback(exibeNome)
 /*
   10
 
@@ -131,6 +137,14 @@ function exibeNome(){
     resulte no triplo de 33.
 */
 
+const callCallback = (value, callback) => {
+  return callback(value)
+}
+
+const triple = (number) => number * 3
+
+console.log(callCallback(11, triple))
+
 /*
   11
 
@@ -141,7 +155,14 @@ function exibeNome(){
 */
 
 const numbers = [1, 2, 3]
+numbers.forEach(element => {
+  console.log(`O ${numbers.indexOf(element) +1}º item do array ${numbers} é ${element}.`)
+});
 
+/*numbers.forEach(element, index, numbers => {
+  console.log(`O ${index +1}º item do array ${numbers} é ${element}.`)
+});
+/*
 /*
   12
 
@@ -153,10 +174,11 @@ const numbers = [1, 2, 3]
 const letters = ['v', 'e', 'p']
 let lettersCopy = []
 
-for (let i = 0; i < letters.length; i++) {
-  lettersCopy.push(letters[i])
-}
+letters.forEach(element =>{
+lettersCopy.push(element)
+});
 
+console.log('Array Copy ' + lettersCopy)
 /*
   13
 
@@ -186,7 +208,11 @@ const review = [
 
 let paragraphs = ''
 
-//section.innerHTML = paragraphs
+review.forEach(paragraph => {
+  paragraphs += `<p>${paragraph}</p>`
+})
+
+section.innerHTML = paragraphs
 
 /*
   14
@@ -208,3 +234,20 @@ let paragraphs = ''
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+
+const getLikesMessage = (names = []) => {
+  switch (names.length) {
+    case 0:
+      return 'Ninguém curtiu isso'
+    case 1:
+      return `${names[0]} curtiu isso`
+    case 2:
+      return `${names[0]} e ${names[1]} curtiram isso`  
+    case 3:
+      return `${names[0]}, ${names[1]} e ${names[2]} curtiram isso`
+    default:
+      return `${names[0]}, ${names[1]} e mais ${names.length - 2} curtiram isso`  
+      }
+}
+
+console.log(getLikesMessage(['Matheus', 'João','Isabela', 'Will']))
