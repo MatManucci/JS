@@ -10,21 +10,35 @@
   - Exiba o objeto no console.
 */
 
+let cat = {
+  name: 'Sephiroth',
+  age: 1,
+  color: 'black',
+  bestFriends: ['Cloud', 'Tifa', 'Arya'],
+  sound: function () {
+    'Miau'
+  }
+}
+
+console.log(cat)
+console.log(cat.sound)
+
 /*
   02
 
   - Exiba a mensagem abaixo no console, substituindo os "X" pelas informações  
     corretas.
-
-  Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "X", "age", que recebeu "X", "color", que recebeu "X", "bestFriends", que recebeu um array com os itens "X" e "X", e "sound", que recebeu uma função que retorna "X".
 */
+  console.log(`Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu ${cat.name}, "age", que recebeu ${cat.age}, "color", que recebeu ${cat.color}, "bestFriends", que recebeu um array com os itens ${cat.bestFriends}, e "sound", que recebeu uma função que retorna ${cat.sound}.`)
+
 
 /*
   03
 
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
-
+  cat.age += 2
+  console.log(`A idade do gato agora é ${cat.age}`)
 /*
   04
 
@@ -32,6 +46,8 @@
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
+cat.bestFriends.push('Kefka')
+console.log(cat.bestFriends)
 
 /*
   05
