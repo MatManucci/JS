@@ -1,3 +1,27 @@
+let user ={
+  name: 'João',
+  age: 31,
+  email: 'matheus.manucci@gmail.com',
+  blogPosts: ['bolo vegano', 'batata frita'],
+  login: function (){
+    console.log('Usuário logado')
+  },
+  logout: function() {
+    console.log('Usuário deslogado')
+  },
+  logBlogPosts: function () {
+    console.log(`${this.name} escreveu os seguintes posts:`)
+
+    this.blogPosts.forEach(post => {
+      console.log(post)
+    })
+  }
+}
+
+user.logBlogPosts()
+
+
+
 /*
   01
 
