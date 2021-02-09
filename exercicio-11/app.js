@@ -1,5 +1,5 @@
-let user ={
-  name: 'João',
+/* let user ={
+  carName: 'João',
   age: 31,
   email: 'matheus.manucci@gmail.com',
   blogPosts: ['bolo vegano', 'batata frita'],
@@ -10,7 +10,7 @@ let user ={
     console.log('Usuário deslogado')
   },
   logBlogPosts: function () {
-    console.log(`${this.name} escreveu os seguintes posts:`)
+    console.log(`${this.carName} escreveu os seguintes posts:`)
 
     this.blogPosts.forEach(post => {
       console.log(post)
@@ -18,7 +18,7 @@ let user ={
   }
 }
 
-user.logBlogPosts()
+user.logBlogPosts() */
 
 
 
@@ -28,7 +28,7 @@ user.logBlogPosts()
   - Declare uma constante que recebe o seu nome;
   - Ela deve ter um escopo global.
 */
-const myName = "Matheus M"
+const mycarName = "Matheus M"
 /*
   02
 
@@ -42,11 +42,12 @@ const myName = "Matheus M"
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
- function showIdade() {
+ /* function showIdade() {
    let age = 30
+   console.log(age)
  }
-
- console.log(age)
+ console.log(showIdade())
+ console.log(age) */
 /*
   03
 
@@ -65,18 +66,22 @@ const myName = "Matheus M"
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
 let car = {
-  name: 'fusca',
+  carName: 'fusca',
   brand: 'volks',
-  color: [verde,vermelho,roxo],
+  colors: ['verde', 'vermelho', 'roxo'],
   isRunning: false,
-  run:  () =>{
-    console.log(`O ${this.name} está em movimento`)
+  run () {
+    this.isRunning = true
+    return `O ${this.carName} está em movimento`
   },
-  stop: () => {
-    console.log(`O ${this.name} está em parado`)
+  stop() {
+    this.isRunning = false
+    return `O ${this.carName} está em parado`
   },
-  getColorsMessage: () => {
-    console.log(`O ${this.name} está disponível nas seguintes cores ${this.color[0]}, ${this.color[1]} e ${this.color[2]}`)
+  getColorsMessage() {
+    const lastItem = this.colors[this.colors.lenght -1]
+    const colors = this.colors.join(', ').replace(lastItem, `e ${lastItem}`)  
+    return `O ${this.carName} está disponível nas seguintes cores ${colors}}`
   }
 }
 /*
@@ -84,24 +89,25 @@ let car = {
 
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
- if(this.car.isRunning){
-   this.car.run()
- }
+ console.log(car.run())
+ console.log(car.isRunning)
 /*
   05
 
   - Faça o carro parar e exiba no console se ele realmente está parado.
 */
-
+console.log(car.stop())
+console.log(`Ocarro está em movimento : ${car.isRunning}`)
 /*
   06
 
   - Exiba, no console, a mensagem com as cores do carro.
 */
-
+console.log(car.getColorsMessage())
 /*
   07
 
   - Exiba, no console, a mensagem "O carro é um MARCA_DO_CARRO NOME_DO_CARRO";
   - Utilize a notação de colchetes para acessar as propriedades do carro.
 */
+console.log(`O carro é da marca ${car['brand']} ${car['carName']} `)
