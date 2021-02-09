@@ -28,7 +28,7 @@ user.logBlogPosts()
   - Declare uma constante que recebe o seu nome;
   - Ela deve ter um escopo global.
 */
-
+const myName = "Matheus M"
 /*
   02
 
@@ -42,7 +42,11 @@ user.logBlogPosts()
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
+ function showIdade() {
+   let age = 30
+ }
 
+ console.log(age)
 /*
   03
 
@@ -60,13 +64,29 @@ user.logBlogPosts()
     - getColorsMessage, que é um método que retorna a mensagem  
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
-
+let car = {
+  name: 'fusca',
+  brand: 'volks',
+  color: [verde,vermelho,roxo],
+  isRunning: false,
+  run:  () =>{
+    console.log(`O ${this.name} está em movimento`)
+  },
+  stop: () => {
+    console.log(`O ${this.name} está em parado`)
+  },
+  getColorsMessage: () => {
+    console.log(`O ${this.name} está disponível nas seguintes cores ${this.color[0]}, ${this.color[1]} e ${this.color[2]}`)
+  }
+}
 /*
   04
 
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
-
+ if(this.car.isRunning){
+   this.car.run()
+ }
 /*
   05
 
