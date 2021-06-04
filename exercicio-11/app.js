@@ -28,7 +28,14 @@ user.logBlogPosts() */
   - Declare uma constante que recebe o seu nome;
   - Ela deve ter um escopo global.
 */
-const mycarName = "Matheus M"
+const mycarName = "Palio"
+
+for (let i = 0; i < 5; i++) {
+  console.log(`dentro do bloco de código: ${mycarName}`)
+}
+
+console.log(`fora do bloco de código: ${mycarName}`)
+
 /*
   02
 
@@ -42,15 +49,15 @@ const mycarName = "Matheus M"
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
- /* function showIdade() {
+  function showIdade() {
    let age = 30
    console.log(age)
  }
- console.log(showIdade())
- console.log(age) */
-/*
-  03
+ showIdade()
+ console.log(age) 
 
+ /*
+ 03
   - Crie um objeto "car" com as seguintes propriedades e métodos:
     - name, que recebe o nome do carro;
     - brand, que recebe a marca do carro;
