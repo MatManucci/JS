@@ -9,8 +9,9 @@ const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
 
 elementsInsideDiv.forEach(element => {
-  element.addEventListener('click', () => {
-    console.log('Clicou no filho da div.')
+  element.addEventListener('click', event => {
+    event.stopPropagation()
+    console.log(`Clicou no ${event.target.tagname.toLowerCase()}, filho da div`)
   })
 })
 
@@ -25,6 +26,17 @@ div.addEventListener('click', () => {
     exibida no console seja "Clicou no NOME_DA_TAG_COM_LETRAS_MINÚSCULAS, filho
     da div.".
 */
+
+/* elementsInsideDiv.forEach(element => {
+  element.addEventListener('click', event => {
+    event.stopPropagation()
+    console.log(`Clicou no ${event.target.tagname.toUpperCase()} filho da div`)
+  })
+})
+
+div.addEventListener('click', () => {
+  console.log('Clicou na div.')
+}) */
 
 /*
   03
